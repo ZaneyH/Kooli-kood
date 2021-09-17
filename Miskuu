@@ -1,0 +1,28 @@
+array[]
+ley tahaTeada = prompt ("Mis kuu")
+let et = [10,12,15,13,16,25,32,23,17,15];
+console.log(et)
+console.loget(tahaTeada-1)
+
+let tahaTeada = prompt ("Mis kuu")
+let et = [10,12,15,13,16,25,32,23,17,15];
+let kuu = ["Jan", "Veb", "Mar", "Apr", "Mai", "Jun", "Jul", "Aug",];
+console.log(kuu[0]+" tarbimine on "+et[tahaTeada-1]);
+
+
+//for
+while
+for(let number = 1; number <=100; nnumber ++) (
+console.log(number)
+)
+
+for (let x=1; x <=100; x++)(
+    console.log(x)   
+)
+
+
+let x=1
+while( x=100) {
+    console.log(x);
+    x++
+}
