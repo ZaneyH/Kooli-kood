@@ -1,0 +1,85 @@
+CREATE TABLE `Group(yr)`(`Id` INT NOT NULL);
+ALTER TABLE
+    `Group(yr)` ADD PRIMARY KEY `group(yr)_id_primary`(`Id`);
+CREATE TABLE `Parent`(
+    `Parent-id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `contact-type-id` INT NOT NULL,
+    `phone` INT NOT NULL
+);
+ALTER TABLE
+    `Parent` ADD PRIMARY KEY `parent_parent_id_primary`(`Parent-id`);
+CREATE TABLE `players`(
+    `ID` INT NOT NULL,
+    `name` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `personal_code` INT NOT NULL,
+    `paid` INT NOT NULL,
+    `number` INT NOT NULL,
+    `email` INT NOT NULL,
+    `parent_id` INT NOT NULL,
+    `group_id` INT NOT NULL
+);
+ALTER TABLE
+    `players` ADD PRIMARY KEY `players_id_primary`(`ID`);
+CREATE TABLE `parent`(
+    `id` INT NOT NULL,
+    `first_name` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `Last_name` INT NOT NULL
+);
+ALTER TABLE
+    `parent` ADD PRIMARY KEY `parent_id_primary`(`id`);
+CREATE TABLE `contact`(
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `parent _id` INT NOT NULL,
+    `contact_type_id` INT NOT NULL,
+    `Value` INT NOT NULL
+);
+ALTER TABLE
+    `contact` ADD PRIMARY KEY `contact_id_primary`(`id`);
+CREATE TABLE `contacttype`(
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `name` INT NOT NULL
+);
+ALTER TABLE
+    `contacttype` ADD PRIMARY KEY `contacttype_id_primary`(`id`);
+CREATE TABLE `training`(
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `date` INT NOT NULL,
+    `description` INT NOT NULL
+);
+ALTER TABLE
+    `training` ADD PRIMARY KEY `training_id_primary`(`id`);
+CREATE TABLE `Payment`(
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `player_id` INT NOT NULL,
+    `Amount` INT NOT NULL,
+    `date` INT NOT NULL
+);
+ALTER TABLE
+    `Payment` ADD PRIMARY KEY `payment_id_primary`(`id`);
+CREATE TABLE `Attendace`(
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `player_id` INT NOT NULL,
+    `trainign_id` INT NOT NULL
+);
+ALTER TABLE
+    `Attendace` ADD PRIMARY KEY `attendace_id_primary`(`id`);
+CREATE TABLE `Test`(
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `palyer_id` INT NOT NULL,
+    `date` INT NOT NULL,
+    `Score` INT NOT NULL,
+    `name` INT NOT NULL,
+    `Desc` INT NOT NULL
+);
+ALTER TABLE
+    `Test` ADD PRIMARY KEY `test_id_primary`(`id`);
+ALTER TABLE
+    `Test` ADD CONSTRAINT `test_palyer_id_foreign` FOREIGN KEY(`palyer_id`) REFERENCES `players`(`ID`);
+ALTER TABLE
+    `Attendace` ADD CONSTRAINT `attendace_trainign_id_foreign` FOREIGN KEY(`trainign_id`) REFERENCES `players`(`ID`);
+ALTER TABLE
+    `players` ADD CONSTRAINT `players_parent_id_foreign` FOREIGN KEY(`parent_id`) REFERENCES `parent`(`id`);
+ALTER TABLE
+    `players` ADD CONSTRAINT `players_group_id_foreign` FOREIGN KEY(`group_id`) REFERENCES `Group(yr)`(`Id`);
+ALTER TABLE
+    `Attendace` ADD CONSTRAINT `attendace_trainign_id_foreign` FOREIGN KEY(`trainign_id`) REFERENCES `training`(`id`);
