@@ -5,30 +5,15 @@ katjal on kolm temperatuurivahemikku
 21-40 on paras temperatuur    tagastab 0
 41-60 on liiga kuum   tagastab 1
 */
-function checkTemp() {
-      let temp = 5;     
-if (temp < 0){
+function checkTemp(temp) {
+    console.log(temp);   
+if (temp <= 15){
  console.log("liiga külm")
-  }  else if (temp > 20 && temp <= 40) {
-
-  } else {
-
-  }
-
-
-
-
+    return -1;
+  }  else if (temp <= 40) {
+console.log("OK");
+      return 0;
+  } else if () temp<= 60 {
+console.log("Liiga kuum");
+      return 1;
 }
-function kasKütta(temp) {
-    return temp < 20 
-}
-
-function kasJahutada(temp)  {
-    return temp > 40
-}
-
-let kasJahutada = true;
-if (kasJahutada(44)) {
-
-
-}            
