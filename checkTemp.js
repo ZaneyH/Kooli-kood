@@ -7,13 +7,14 @@ katjal on kolm temperatuurivahemikku
 */
 function checkTemp(temp) {
     console.log(temp);   
-if (temp <= 15) {
+if (temp <= 20) {
  console.log("liiga külm") ;
     return -1;
   }  else if (temp <= 40) {
-console.log("OK");
+console.log("Paras");
       return 0;
-  } else if (temp<= 60) {
+  } else if (temp <= 60) {
 console.log("Liiga kuum");
       return 1;
+}
 }
