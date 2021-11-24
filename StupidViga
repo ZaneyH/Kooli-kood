@@ -1,0 +1,3 @@
+SELECT Player.name, LastName, group_id, Groups.name(SEE)
+FROM Player
+LEFT JOIN Groups ON Player.group_id = Groups.id
