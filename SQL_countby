@@ -1,0 +1,4 @@
+SELECT Groups.name, COUNT(Groups.id) AS Mangijad
+FROM Player, Groups
+WHERE Player.group_id = Groups.id
+GROUP BY Groups.name
